@@ -11,7 +11,7 @@ module.exports = {
       568: '568px',
     },
     minWidth: {
-      320: '320px',
+      280: '280px',
       330: '330px',
     },
     fontFamily: {
