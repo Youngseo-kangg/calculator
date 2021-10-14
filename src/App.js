@@ -114,6 +114,18 @@ function App() {
     });
   };
 
+  // 초기화 함수 resetAll
+  const resetAll = () => {
+    setStatus({
+      numStat: false,
+      screen: '0',
+      firstNum: '0',
+      operator: '',
+      secondNum: '0',
+      result: '',
+    });
+  };
+
   // 계산하는 함수 changeResult
   const changeResult = () => {
     if (status.operator === '+') {
@@ -163,11 +175,14 @@ function App() {
           {status.screen}
         </div>
         <ul className='h-1/6 flex'>
-          <li className='w-1/2 flex justify-center items-center bg-pink-200 rounded-full shadow'>
+          <li
+            className='w-1/2 flex justify-center items-center bg-pink-200 rounded-full shadow cursor-pointer transition hover:bg-purple-300'
+            onClick={resetAll}
+          >
             CA
           </li>
           <li
-            className='w-1/2 flex justify-center items-center bg-pink-200 rounded-full shadow'
+            className='w-1/2 flex justify-center items-center bg-pink-200 rounded-full shadow cursor-pointer transition hover:bg-purple-300'
             onClick={changeResult}
           >
             ENTER
@@ -179,7 +194,7 @@ function App() {
               if (num === 0) {
                 return (
                   <li
-                    className='w-2/3 h-1/4 flex justify-center items-center bg-pink-50 rounded-full box-border shadow'
+                    className='w-2/3 h-1/4 flex justify-center items-center bg-pink-50 rounded-full box-border shadow cursor-pointer transition hover:bg-purple-200'
                     key={num}
                     onClick={(event) => changeNum(event)}
                   >
@@ -189,7 +204,7 @@ function App() {
               } else {
                 return (
                   <li
-                    className='w-1/3 h-1/4 flex justify-center items-center bg-pink-50 rounded-full box-border shadow'
+                    className='w-1/3 h-1/4 flex justify-center items-center bg-pink-50 rounded-full box-border shadow cursor-pointer transition hover:bg-purple-200'
                     key={num}
                     onClick={(event) => changeNum(event)}
                   >
@@ -201,25 +216,25 @@ function App() {
           </ul>
           <ul className='flex flex-col w-1/4'>
             <li
-              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow'
+              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow cursor-pointer transition hover:bg-purple-200'
               onClick={(event) => changeOperator(event)}
             >
               +
             </li>
             <li
-              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow'
+              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow cursor-pointer transition hover:bg-purple-200'
               onClick={(event) => changeOperator(event)}
             >
               -
             </li>
             <li
-              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow'
+              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow cursor-pointer transition hover:bg-purple-200'
               onClick={(event) => changeOperator(event)}
             >
               &times;
             </li>
             <li
-              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow'
+              className='h-1/4 bg-pink-200 m-1 rounded-full flex justify-center items-center box-border shadow cursor-pointer transition hover:bg-purple-200'
               onClick={(event) => changeOperator(event)}
             >
               /
