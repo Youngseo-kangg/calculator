@@ -21,6 +21,9 @@ function App() {
         // TODO : 계산한 적이 있을 때
         if (currentNum === '.') {
           // TODO : 계산한 적이 있을 때 + '.' 클릭했을 때
+          if (status.secondNum.includes('.')) {
+            return;
+          }
           setStatus({
             ...status,
             screen: status.secondNum + currentNum, // '0.' 화면에 띄워주기
@@ -60,6 +63,9 @@ function App() {
         }
       } else {
         // TODO : 이후에 입력할때
+        if (currentNum === '.') {
+          return;
+        }
         setStatus({
           ...status,
           screen: status.screen + currentNum, // 화면에 띄워주기
@@ -95,6 +101,9 @@ function App() {
         }
       } else {
         // TODO : 이후에 입력할때
+        if (currentNum === '.') {
+          return;
+        }
         setStatus({
           ...status,
           screen: status.screen + currentNum, // 화면에 띄워주기
